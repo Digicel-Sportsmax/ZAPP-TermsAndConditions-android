@@ -15,7 +15,7 @@
   "platform": "android",
   "author_name": "Elias bou nader",
   "author_email": "elias.bounader@gotocme.com",
-  "manifest_version": "0.0.2",
+  "manifest_version": "0.0.3",
   "name": "TermsAndConditionsPluginAndroid",
   "description": "TermsAndConditionsPluginAndroid",
   "type": "general",
@@ -23,7 +23,7 @@
   "ui_builder_support": true,
   "screen": false,
   "dependency_name": "com.applicaster:TermsAndConditionsPluginAndroid",
-  "dependency_version": "0.0.2",
+  "dependency_version": "0.0.3",
   "whitelisted_account_ids": [
     "5af949534da8f300080050f9"
   ],
