@@ -19,7 +19,7 @@
   "name": "TermsAndConditionsPluginAndroid",
   "description": "TermsAndConditionsPluginAndroid",
   "type": "general",
-  "identifier": "TermsAndConditionsPluginAndroid",
+  "identifier": "SMaxTermsAndCondition",
   "ui_builder_support": true,
   "screen": false,
   "dependency_name": "com.applicaster:TermsAndConditionsPluginAndroid",
