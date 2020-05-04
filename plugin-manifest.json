@@ -1,0 +1,79 @@
+{
+  "api": {
+    "require_startup_execution": false,
+    "class_name": "com.sportsmax.termsandconditions_android.StartUpAdapter",
+    "modules": []
+  },
+  "dependency_repository_url": [
+    {
+      "url": "https://dl.bintray.com/swrve-inc/android"
+    },
+    {
+      "url": "https://github.com/EliasBouNader/ZAPP-TermsAndConditions-android.git"
+    }
+  ],
+  "platform": "android",
+  "author_name": "Elias bou nader",
+  "author_email": "elias.bounader@gotocme.com",
+  "manifest_version": "0.0.1",
+  "name": "TermsAndConditionsPluginAndroid",
+  "description": "TermsAndConditionsPluginAndroid",
+  "type": "analytics",
+  "identifier": "TermsAndConditionsPluginAndroid",
+  "ui_builder_support": true,
+  "screen": false,
+  "dependency_name": "com.applicaster:TermsAndConditionsPluginAndroid",
+  "dependency_version": "0.0.1",
+  "whitelisted_account_ids": [
+    "5af949534da8f300080050f9"
+  ],
+  "min_zapp_sdk": "11.2.0",
+  "deprecated_since_zapp_sdk": "",
+  "unsupported_since_zapp_sdk": "",
+  "react_native": false,
+  "custom_configuration_fields": [
+    {
+      "type": "checkbox",
+      "key": "show_screen_at_launch",
+      "tooltip_text": "Flag to indicate if to present the screen on app launch"
+    },
+    {
+      "type": "uploader",
+      "key": "navigation_header_image",
+      "tooltip_text": "image to be shown in the header"
+    },
+    {
+      "type": "text_input",
+      "key": "navigation_header_text",
+      "tooltip_text": "text to be shown in the header if no image is uploaded"
+    },
+    {
+      "type": "text_input",
+      "key": "navigation_header_background",
+      "tooltip_text": "Navigation Header background Color",
+      "initial_value": "#356bac"
+    },
+    {
+      "type": "textarea",
+      "key": "terms_condition_text",
+      "tooltip_text": "terms and condition text"
+    },
+    {
+      "type": "text_input",
+      "key": "agree_button_text",
+      "tooltip_text": "Agree Button Text"
+    },
+    {
+      "type": "text_input",
+      "key": "agree_button_text_color",
+      "tooltip_text": "Agree Button Text Color",
+      "initial_value": "#FF0000"
+    },
+    {
+      "type": "text_input",
+      "key": "agree_button_bg_color",
+      "tooltip_text": "Agree Button Text Color",
+      "initial_value": "#356bac"
+    }
+  ]
+}

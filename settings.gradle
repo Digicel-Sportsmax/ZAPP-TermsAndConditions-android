@@ -1,0 +1,5 @@
+rootProject.name='TermsAndConditionsPlugin'
+//include ':app'
+include ':termsandconditions-android'
+project(':termsandconditions-android').projectDir = new File('termsandconditions-android')
+
