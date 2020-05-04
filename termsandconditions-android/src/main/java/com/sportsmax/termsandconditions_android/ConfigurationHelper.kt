@@ -1,6 +1,6 @@
 package com.sportsmax.termsandconditions_android
 
-object PluginConfigurationHelper {
+object ConfigurationHelper {
 
     private var pluginConfiguration: HashMap<String, String> = HashMap()
 

@@ -18,7 +18,7 @@
   "manifest_version": "0.0.1",
   "name": "TermsAndConditionsPluginAndroid",
   "description": "TermsAndConditionsPluginAndroid",
-  "type": "analytics",
+  "type": "general",
   "identifier": "TermsAndConditionsPluginAndroid",
   "ui_builder_support": true,
   "screen": false,
