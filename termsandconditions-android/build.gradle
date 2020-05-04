@@ -15,9 +15,9 @@ repositories {
         }
         url 'https://dl.bintray.com/applicaster-ltd/maven'
     }
-    jcenter {
-        url = 'https://dl.bintray.com/swrve-inc/android'
-    }
+//    jcenter {
+//        url = 'https://dl.bintray.com/swrve-inc/android'
+//    }
 }
 
 buildscript {
@@ -25,9 +25,9 @@ buildscript {
     repositories {
         google()
         jcenter()
-        jcenter {
-            url = 'https://dl.bintray.com/swrve-inc/android'
-        }
+//        jcenter {
+//            url = 'https://dl.bintray.com/swrve-inc/android'
+//        }
     }
     dependencies {
 //        classpath 'com.android.tools.build:gradle:3.6.3'
@@ -73,7 +73,7 @@ android {
     }
 
     repositories {
-        jcenter { url = 'https://dl.bintray.com/swrve-inc/android' }
+//        jcenter { url = 'https://dl.bintray.com/swrve-inc/android' }
         maven { url 'https://maven.google.com' }
     }
     compileOptions {
@@ -88,7 +88,6 @@ android {
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
     // Applicaster SDK
     //def applicasterSDKPath = 'com.applicaster:applicaster-android-sdk:4.0.+'
     def applicasterSDKPath = 'com.applicaster:applicaster-android-sdk:2.32.39'
