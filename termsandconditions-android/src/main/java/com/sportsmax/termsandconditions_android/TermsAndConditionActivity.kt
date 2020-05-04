@@ -1,6 +1,5 @@
 package com.sportsmax.termsandconditions_android
 
-import android.content.Context
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -30,12 +29,12 @@ class TermsAndConditionActivity : AppCompatActivity() {
         val tvTermsAndConditions = findViewById<TextView>(R.id.tv_termsAndConditions)
         val btnAccept = findViewById<Button>(R.id.btn_agreeAndContinue)
 
-        UiHelper.updateTextViewText(tvTermsAndConditions, TERMS_AND_CONDITIONS_TEXT)
-        UiHelper.updateTextViewText(title, NAVIGATION_HEADER_TEXT)
-        UiHelper.updateButtonStyle(btnAccept, text = AGREE_BUTTON_TEXT, backgroundColor = AGREE_BUTTON_BG_COLOR, textColor = AGREE_BUTTON_TEXT_COLOR)
-        UiHelper.updateToolbarBackgroundColor(toolbar = toolbar, backgroundColor = NAVIGATION_HEADER_BACKGROUND)
+        ConfigurationUiHelper.updateTextViewText(tvTermsAndConditions, TERMS_AND_CONDITIONS_TEXT)
+        ConfigurationUiHelper.updateTextViewText(title, NAVIGATION_HEADER_TEXT)
+        ConfigurationUiHelper.updateButtonStyle(btnAccept, text = AGREE_BUTTON_TEXT, backgroundColor = AGREE_BUTTON_BG_COLOR, textColor = AGREE_BUTTON_TEXT_COLOR)
+        ConfigurationUiHelper.updateToolbarBackgroundColor(toolbar = toolbar, backgroundColor = NAVIGATION_HEADER_BACKGROUND)
 
-        val imageUrl = UiHelper.getValue(NAVIGATION_HEADER_IMAGE)
+        val imageUrl = ConfigurationUiHelper.getValue(NAVIGATION_HEADER_IMAGE)
         logo.load(imageUrl)
 
         btnAccept.setOnClickListener {

@@ -13,7 +13,7 @@ class StartUpAdapter: ApplicationLoaderHookUpI {
     }
 
     override fun executeOnApplicationReady(context: Context?, listener: HookListener?) {
-        if(UiHelper.getValue(SHOW_SCREEN_AT_LAUNCH) == "1"){
+        if(ConfigurationUiHelper.getValue(SHOW_SCREEN_AT_LAUNCH) == "1"){
             val isTermsAndConditionsAccepted = SessionStorageUtil.get(ACCEPTED_TERMS_AND_CONDITIONS, PLUGIN_NAME)
             if(isTermsAndConditionsAccepted != "1"){
                 val intent = Intent(context!!, TermsAndConditionActivity::class.java)
@@ -23,6 +23,6 @@ class StartUpAdapter: ApplicationLoaderHookUpI {
     }
 
     override fun setPluginConfigurationParams(params: MutableMap<Any?, Any?>?) {
-        PluginConfigurationHelper.setConfigurationMap(params as Map<String, String>)
+        ConfigurationHelper.setConfigurationMap(params as Map<String, String>)
     }
 }
