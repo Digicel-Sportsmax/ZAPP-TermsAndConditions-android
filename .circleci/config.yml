@@ -5,7 +5,7 @@
 defaults: &defaults
   working_directory: ~/APPlugin
   docker:
-    - image: circleci/android:api-28
+    - image: circleci/android:api-25
 
 version: 2
 jobs:
