@@ -2,6 +2,8 @@
   "api": {
     "require_startup_execution": true,
     "class_name": "com.sportsmax.termsandconditions_android.StartUpAdapter",
+    "proguard_rules": "##---------------Proguard configuration for termsAndConditions plugin  ----------\n-ignorewarnings\n-dontshrink\n-keepclassmembers class com.sportsmax.termsandconditions_android.**\n-keepclassmembers class com.sportsmax.termsandconditions_android.** { *; }",
+
     "modules": []
   },
   "dependency_repository_url": [
@@ -12,7 +14,7 @@
   "platform": "android",
   "author_name": "Elias bou nader",
   "author_email": "elias.bounader@gotocme.com",
-  "manifest_version": "0.0.11",
+  "manifest_version": "0.0.12",
   "name": "[Sportsmax]: Terms & Conditions",
   "description": "TermsAndConditionsPluginAndroid",
   "type": "general",
@@ -20,7 +22,7 @@
   "ui_builder_support": true,
   "screen": false,
   "dependency_name": "com.applicaster:TermsAndConditionsPluginAndroid",
-  "dependency_version": "0.0.11",
+  "dependency_version": "0.0.12",
   "whitelisted_account_ids": [
     "5af949534da8f300080050f9"
   ],

@@ -22,6 +22,5 @@
 
 -ignorewarnings
 -dontshrink
-
 -keepclassmembers class com.sportsmax.termsandconditions_android.**
 -keepclassmembers class com.sportsmax.termsandconditions_android.** { *; }
