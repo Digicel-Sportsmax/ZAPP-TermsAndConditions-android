@@ -6,7 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import coil.api.load
+//import coil.api.load
 import com.applicaster.session.SessionStorageUtil
 
 
@@ -35,7 +35,7 @@ class TermsAndConditionActivity : AppCompatActivity() {
         ConfigurationUiHelper.updateToolbarBackgroundColor(toolbar = toolbar, backgroundColor = NAVIGATION_HEADER_BACKGROUND)
 
         val imageUrl = ConfigurationUiHelper.getValue(NAVIGATION_HEADER_IMAGE)
-        logo.load(imageUrl)
+//        logo.load(imageUrl)
 
         btnAccept.setOnClickListener {
             SessionStorageUtil.set(ACCEPTED_TERMS_AND_CONDITIONS, "1", PLUGIN_NAME)
