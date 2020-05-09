@@ -2,6 +2,8 @@ package com.sportsmax.termsandconditions_android
 
 import android.graphics.Color
 import android.graphics.Typeface
+import android.os.Build
+import android.text.Html
 import android.util.Log
 import android.util.TypedValue
 import android.widget.Button
@@ -15,11 +17,19 @@ class ConfigurationUiHelper {
         private val TAG = "UiHelper"
 
         @JvmStatic
-        fun updateTextViewText(textView: TextView?, key: String) {
+        fun updateTextViewText(textView: TextView?, key: String, isHtml: Boolean = false) {
             if (textView != null) {
                 var textValue = ConfigurationHelper.getConfigurationValue(key)
                 textValue = if (StringUtil.isNotEmpty(textValue)) textValue else key
-                textView.text = textValue
+                if(isHtml){
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        textView.text = Html.fromHtml(textValue, Html.FROM_HTML_MODE_COMPACT)
+                    } else {
+                        textView.text = Html.fromHtml(textValue)
+                    }
+                }else{
+                    textView.text = textValue
+                }
             }
         }
 
