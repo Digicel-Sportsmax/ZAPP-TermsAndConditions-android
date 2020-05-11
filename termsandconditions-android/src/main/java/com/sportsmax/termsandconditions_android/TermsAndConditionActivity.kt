@@ -35,7 +35,7 @@ class TermsAndConditionActivity : APBaseActivity() {
 
         val btnAccept = findViewById<Button>(R.id.btn_agreeAndContinue)
 
-        ConfigurationUiHelper.updateTextViewText(tvTermsAndConditions, TERMS_AND_CONDITIONS_TEXT)
+        ConfigurationUiHelper.updateTextViewText(tvTermsAndConditions, TERMS_AND_CONDITIONS_TEXT, true)
         ConfigurationUiHelper.updateTextViewText(title, NAVIGATION_HEADER_TEXT)
         ConfigurationUiHelper.updateButtonStyle(btn_agreeAndContinue, text = AGREE_BUTTON_TEXT, backgroundColor = AGREE_BUTTON_BG_COLOR, textColor = AGREE_BUTTON_TEXT_COLOR)
         ConfigurationUiHelper.updateToolbarBackgroundColor(toolbar = toolbar, backgroundColor = NAVIGATION_HEADER_BACKGROUND)
