@@ -18,7 +18,7 @@
   "platform": "android",
   "author_name": "Elias bou nader",
   "author_email": "elias.bounader@gotocme.com",
-  "manifest_version": "0.0.2",
+  "manifest_version": "0.0.21",
   "name": "[Sportsmax]: Terms & Conditions",
   "description": "Sportsmax Terms & Conditions",
   "type": "general",
@@ -27,7 +27,7 @@
    "screen": true,
    "preload": true,
   "dependency_name": "com.applicaster:TermsAndConditionsPluginAndroid",
-  "dependency_version": "0.0.2",
+  "dependency_version": "0.0.21",
   "whitelisted_account_ids": [
     "5af949534da8f300080050f9"
   ],
