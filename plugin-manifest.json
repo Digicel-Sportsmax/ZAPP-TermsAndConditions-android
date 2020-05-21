@@ -12,13 +12,13 @@
       "url": "https://dl.bintray.com/swrve-inc/android"
     },
     {
-      "url": "https://github.com/EliasBouNader/ZAPP-TermsAndConditions-android.git"
+      "url": "https://github.com/Digicel-Sportsmax/ZAPP-TermsAndConditions-android.git"
     }
   ],
   "platform": "android",
   "author_name": "Elias bou nader",
   "author_email": "elias.bounader@gotocme.com",
-  "manifest_version": "0.0.18",
+  "manifest_version": "0.0.19",
   "name": "[Sportsmax]: Terms & Conditions",
   "description": "Sportsmax Terms & Conditions",
   "type": "general",
@@ -27,7 +27,7 @@
    "screen": true,
    "preload": true,
   "dependency_name": "com.applicaster:TermsAndConditionsPluginAndroid",
-  "dependency_version": "0.0.18",
+  "dependency_version": "0.0.19",
   "whitelisted_account_ids": [
     "5af949534da8f300080050f9"
   ],
