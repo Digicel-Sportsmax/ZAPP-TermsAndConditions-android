@@ -1,6 +1,7 @@
 package com.sportsmax.termsandconditions_android
 
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.text.method.ScrollingMovementMethod
 import android.view.View
 import android.widget.Button
@@ -31,6 +32,7 @@ class TermsAndConditionActivity : APBaseActivity() {
         val title = findViewById<TextView>(R.id.tv_title)
         val logo = findViewById<ImageView>(R.id.logo_sportsmax)
         val tvTermsAndConditions = findViewById<TextView>(R.id.tv_termsAndConditions)
+        tvTermsAndConditions.movementMethod = LinkMovementMethod.getInstance()
         tvTermsAndConditions.movementMethod = ScrollingMovementMethod()
 
         val btnAccept = findViewById<Button>(R.id.btn_agreeAndContinue)

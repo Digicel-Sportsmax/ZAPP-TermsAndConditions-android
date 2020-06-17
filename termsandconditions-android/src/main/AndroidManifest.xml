@@ -3,7 +3,7 @@
     package="com.sportsmax.termsandconditions_android">
 
     <application>
-        <activity android:name=".TermsAndConditionActivity"></activity>
+        <activity android:name=".TermsAndConditionActivity" />
     </application>
 
 </manifest>
