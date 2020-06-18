@@ -45,19 +45,27 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/tv_termsAndConditions"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:padding="8dp"
-        android:textColor="@color/black"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:id="@+id/tv_termsAndConditions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+    </androidx.core.widget.NestedScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -73,7 +81,7 @@
             android:id="@+id/btn_agreeAndContinue"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            app:layout_constraintWidth_percent="0.4"
+            app:layout_constraintWidth_percent="0.8"
             android:text="Agree and Continue"
             android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"

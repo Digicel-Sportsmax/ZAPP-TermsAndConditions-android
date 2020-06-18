@@ -33,7 +33,6 @@ class TermsAndConditionActivity : APBaseActivity() {
         val logo = findViewById<ImageView>(R.id.logo_sportsmax)
         val tvTermsAndConditions = findViewById<TextView>(R.id.tv_termsAndConditions)
         tvTermsAndConditions.movementMethod = LinkMovementMethod.getInstance()
-        tvTermsAndConditions.movementMethod = ScrollingMovementMethod()
 
         val btnAccept = findViewById<Button>(R.id.btn_agreeAndContinue)
 
@@ -51,6 +50,11 @@ class TermsAndConditionActivity : APBaseActivity() {
             StartUpAdapter.hookListener?.onHookFinished()
             this.finish()
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
     }
 
 }
