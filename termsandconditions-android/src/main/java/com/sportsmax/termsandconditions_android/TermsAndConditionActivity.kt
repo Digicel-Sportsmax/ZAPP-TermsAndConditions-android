@@ -41,10 +41,16 @@ class TermsAndConditionActivity : APBaseActivity() {
         ConfigurationUiHelper.updateButtonStyle(btn_agreeAndContinue, text = AGREE_BUTTON_TEXT, backgroundColor = AGREE_BUTTON_BG_COLOR, textColor = AGREE_BUTTON_TEXT_COLOR)
         ConfigurationUiHelper.updateToolbarBackgroundColor(toolbar = toolbar, backgroundColor = NAVIGATION_HEADER_BACKGROUND)
         val imageUrl = ConfigurationUiHelper.getValue(NAVIGATION_HEADER_IMAGE)
+
         if(!imageUrl.isNullOrEmpty()){
             title.visibility = View.INVISIBLE
             Picasso.get().load(imageUrl).into(logo)
+        }else{
+            if(title.text.isNullOrEmpty()){
+                title.text = getString(R.string.terms_and_conditions)
+            }
         }
+
         btnAccept.setOnClickListener {
             LocalStorage.storageRepository.set(ACCEPTED_TERMS_AND_CONDITIONS, "1", PLUGIN_NAME)
             StartUpAdapter.hookListener?.onHookFinished()
