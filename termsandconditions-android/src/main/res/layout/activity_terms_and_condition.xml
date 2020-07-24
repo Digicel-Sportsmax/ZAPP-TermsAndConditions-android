@@ -61,7 +61,10 @@
             android:textColor="@color/black"
             android:clickable="true"
             android:focusable="true"
-            android:padding="8dp"/>
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"/>
     </androidx.core.widget.NestedScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout

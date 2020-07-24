@@ -1,7 +1,9 @@
 package com.sportsmax.termsandconditions_android
 
+import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
+import android.graphics.drawable.Drawable
 import android.os.Build
 import android.text.Html
 import android.util.Log
@@ -9,6 +11,7 @@ import android.util.TypedValue
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import com.applicaster.app.CustomApplication
 import com.applicaster.util.StringUtil
 
@@ -23,7 +26,7 @@ class ConfigurationUiHelper {
                 textValue = if (StringUtil.isNotEmpty(textValue)) textValue else key
                 if(isHtml){
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        textView.text = Html.fromHtml(textValue, Html.FROM_HTML_MODE_COMPACT)
+                        textView.text = Html.fromHtml(textValue, Html.FROM_HTML_MODE_LEGACY)
                     } else {
                         textView.text = Html.fromHtml(textValue)
                     }
@@ -41,7 +44,8 @@ class ConfigurationUiHelper {
                 button.text = textValue
 
                 var textColorValue = ConfigurationHelper.getConfigurationValue(textColor)
-                textColorValue = if (StringUtil.isNotEmpty(textColorValue)) textColorValue else "#000000"
+                textColorValue =
+                    if (StringUtil.isNotEmpty(textColorValue)) textColorValue else "#000000"
                 button.setTextColor(Color.parseColor(textColorValue))
 
                 var bgColorValue = ConfigurationHelper.getConfigurationValue(backgroundColor)
