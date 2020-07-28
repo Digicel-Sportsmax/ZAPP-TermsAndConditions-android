@@ -18,7 +18,7 @@
   "platform": "android",
   "author_name": "Elias bou nader",
   "author_email": "elias.bounader@gotocme.com",
-  "manifest_version": "0.0.30",
+  "manifest_version": "0.0.31",
   "name": "[Sportsmax]: Terms & Conditions",
   "description": "Sportsmax Terms & Conditions",
   "type": "general",
@@ -27,7 +27,7 @@
    "screen": true,
    "preload": true,
   "dependency_name": "com.applicaster:TermsAndConditionsPluginAndroid",
-  "dependency_version": "0.0.30",
+  "dependency_version": "0.0.31",
   "whitelisted_account_ids": [
     "5af949534da8f300080050f9"
   ],
@@ -63,6 +63,16 @@
       "tooltip_text": "terms and condition text"
     },
     {
+      "type": "textarea",
+      "key": "data_consent_text",
+      "tooltip_text": "Data Consent text"
+    },
+    {
+      "type": "text_input",
+      "key": "next_button_text",
+      "tooltip_text": "Next Button Text"
+    },
+    {
       "type": "text_input",
       "key": "agree_button_text",
       "tooltip_text": "Agree Button Text"
@@ -70,14 +80,24 @@
     {
       "type": "text_input",
       "key": "agree_button_text_color",
-      "tooltip_text": "Agree Button Text Color",
-      "initial_value": "#FF0000"
+      "tooltip_text": "Agree / Next Button Text Color",
+      "initial_value": "#FFFFFF"
     },
     {
       "type": "text_input",
       "key": "agree_button_bg_color",
-      "tooltip_text": "Agree Button Text Color",
+      "tooltip_text": "Agree / Next Button background Color",
       "initial_value": "#356bac"
+    },
+    {
+      "type": "text_input",
+      "key": "terms_and_condition_checkbox",
+      "tooltip_text": "terms and condition checkbox"
+    },
+    {
+      "type": "text_input",
+      "key": "data_consent_checkbox",
+      "tooltip_text": "data consent checkbox"
     }
   ],
  "targets": [

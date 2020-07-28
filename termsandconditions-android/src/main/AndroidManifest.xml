@@ -4,6 +4,7 @@
 
     <application>
         <activity android:name=".TermsAndConditionActivity" />
+        <activity android:name=".DataConsumptionActivity" />
     </application>
 
 </manifest>

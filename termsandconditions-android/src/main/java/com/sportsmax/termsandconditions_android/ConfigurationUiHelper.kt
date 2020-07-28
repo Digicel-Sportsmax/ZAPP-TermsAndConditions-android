@@ -1,17 +1,17 @@
 package com.sportsmax.termsandconditions_android
 
-import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.Typeface
-import android.graphics.drawable.Drawable
 import android.os.Build
 import android.text.Html
 import android.util.Log
 import android.util.TypedValue
 import android.widget.Button
+import android.widget.CheckBox
+import android.widget.RadioButton
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat
 import com.applicaster.app.CustomApplication
 import com.applicaster.util.StringUtil
 
@@ -24,38 +24,58 @@ class ConfigurationUiHelper {
             if (textView != null) {
                 var textValue = ConfigurationHelper.getConfigurationValue(key)
                 textValue = if (StringUtil.isNotEmpty(textValue)) textValue else key
-                if(isHtml){
+                if (isHtml) {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                         textView.text = Html.fromHtml(textValue, Html.FROM_HTML_MODE_LEGACY)
                     } else {
                         textView.text = Html.fromHtml(textValue)
                     }
-                }else{
+                } else {
                     textView.text = textValue
                 }
             }
         }
 
         @JvmStatic
-        fun updateButtonStyle(button: Button?, text: String, backgroundColor: String, textColor: String) {
-            if (button != null) {
+        fun updateCheckboxStyle(checkbox: CheckBox?, text: String) {
+            checkbox?.let {
                 var textValue = ConfigurationHelper.getConfigurationValue(text)
                 textValue = if (StringUtil.isNotEmpty(textValue)) textValue else text
-                button.text = textValue
-
-                var textColorValue = ConfigurationHelper.getConfigurationValue(textColor)
-                textColorValue =
-                    if (StringUtil.isNotEmpty(textColorValue)) textColorValue else "#000000"
-                button.setTextColor(Color.parseColor(textColorValue))
-
-                var bgColorValue = ConfigurationHelper.getConfigurationValue(backgroundColor)
-                bgColorValue = if (StringUtil.isNotEmpty(bgColorValue)) bgColorValue else "#000000"
-                button.setBackgroundColor(Color.parseColor(bgColorValue))
+                checkbox.text = textValue
             }
         }
 
         @JvmStatic
-        fun getValue(resource: String) : String? {
+        fun updateButtonStyle(checkboxButtonAccepted: Boolean, button: Button?, text: String, backgroundColor: String, textColor: String) {
+            button?.let {
+                var textValue = ConfigurationHelper.getConfigurationValue(text)
+                textValue = if (StringUtil.isNotEmpty(textValue)) textValue else text
+
+                var textColorValue = ConfigurationHelper.getConfigurationValue(textColor)
+                textColorValue = if (StringUtil.isNotEmpty(textColorValue)) textColorValue else "#FFFFFF"
+
+                var bgColorValue = ConfigurationHelper.getConfigurationValue(backgroundColor)
+                bgColorValue = if (StringUtil.isNotEmpty(bgColorValue)) bgColorValue else "#356bac"
+
+                if (!checkboxButtonAccepted) {
+                    textColorValue = "#FFFFFF"
+                    bgColorValue = "#C0C0C0"
+                    button.isEnabled = false
+                    button.isClickable = false
+                } else {
+                    button.isEnabled = true
+                    button.isClickable = true
+                }
+
+                button.text = textValue
+                button.setTextColor(Color.parseColor(textColorValue))
+                button.setBackgroundColor(Color.parseColor(bgColorValue))
+            }
+
+        }
+
+        @JvmStatic
+        fun getValue(resource: String): String? {
             var resourceValue = ConfigurationHelper.getConfigurationValue(resource)
             resourceValue = if (StringUtil.isNotEmpty(resourceValue)) resourceValue else resource
             return resourceValue
@@ -65,7 +85,7 @@ class ConfigurationUiHelper {
         fun updateToolbarBackgroundColor(toolbar: Toolbar?, backgroundColor: String) {
             toolbar.let {
                 var bgColorValue = ConfigurationHelper.getConfigurationValue(backgroundColor)
-                bgColorValue = if (StringUtil.isNotEmpty(bgColorValue)) bgColorValue else "#000000"
+                bgColorValue = if (StringUtil.isNotEmpty(bgColorValue)) bgColorValue else "#356bac"
                 it?.setBackgroundColor(Color.parseColor(bgColorValue))
             }
         }
@@ -74,12 +94,12 @@ class ConfigurationUiHelper {
         fun updateTextViewFont(textView: TextView?, key: String) {
             var fontName = ConfigurationHelper.getConfigurationValue(key)
             if (textView != null && StringUtil.isNotEmpty(fontName)) {
-                var typeface = getFontFromAssets(fontName,".otf")
+                var typeface = getFontFromAssets(fontName, ".otf")
                 typeface?.let {
                     textView.typeface = typeface
                     return
                 }
-                typeface = getFontFromAssets(fontName,".ttf")
+                typeface = getFontFromAssets(fontName, ".ttf")
                 typeface?.let {
                     textView.typeface = typeface
                     return
@@ -95,7 +115,7 @@ class ConfigurationUiHelper {
                 sizeInPixel?.let {
                     size = sizeInPixel?.toFloat();
                 }
-            }catch (err:Exception){
+            } catch (err: Exception) {
                 Log.d(TAG, "key: ${key} couldn't be paresed to float.")
             }
 
@@ -112,7 +132,6 @@ class ConfigurationUiHelper {
                 textView.setTextColor(Color.parseColor(colorValue))
             }
         }
-
 
 
         @JvmStatic
