@@ -17,7 +17,8 @@ class StartUpAdapter: ApplicationLoaderHookUpI {
         Log.wtf("** hookListener","null? " + (hookListener == null))
         if(ConfigurationUiHelper.getValue(SHOW_SCREEN_AT_LAUNCH) == "1"){
             Log.wtf("** show"," screen")
-            val isTermsAndConditionsAccepted = LocalStorage.storageRepository.get(ACCEPTED_TERMS_AND_CONDITIONS, PLUGIN_NAME)
+            val isTermsAndConditionsAccepted = LocalStorage.storageRepository.get(
+                ACCEPTED_TERMS_AND_CONDITIONS_DATA_CONSENT, PLUGIN_NAME)
             Log.wtf("** isTermsAndConditionsAccepted", "is  $isTermsAndConditionsAccepted")
             if(isTermsAndConditionsAccepted != "1"){
                 val intent = Intent(context!!, TermsAndConditionActivity::class.java)
