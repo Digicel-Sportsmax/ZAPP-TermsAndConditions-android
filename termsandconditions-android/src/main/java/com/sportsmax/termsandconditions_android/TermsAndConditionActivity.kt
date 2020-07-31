@@ -57,6 +57,7 @@ class TermsAndConditionActivity : APBaseActivity() {
 
         btnAccept.setOnClickListener {
             startActivity(Intent(this, DataConsumptionActivity::class.java))
+            finish()
         }
     }
 
