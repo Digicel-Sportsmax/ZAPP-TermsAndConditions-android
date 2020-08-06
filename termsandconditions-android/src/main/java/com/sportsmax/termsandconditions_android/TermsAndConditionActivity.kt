@@ -1,6 +1,7 @@
 package com.sportsmax.termsandconditions_android
 
 import android.content.Intent
+import android.content.pm.ApplicationInfo
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.view.View
@@ -57,7 +58,8 @@ class TermsAndConditionActivity : APBaseActivity() {
         }
 
         btnAccept.setOnClickListener {
-            if(BuildConfig.BUILD_TYPE == "release"){
+            val isDebuggable = 0 != applicationContext?.applicationInfo?.flags ?: 0 and ApplicationInfo.FLAG_DEBUGGABLE
+            if(!isDebuggable){
                 LocalStorage.storageRepository.set(ACCEPTED_TERMS_AND_CONDITIONS_DATA_CONSENT, "1", PLUGIN_NAME)
                 StartUpAdapter.hookListener?.onHookFinished()
                 this.finish()
