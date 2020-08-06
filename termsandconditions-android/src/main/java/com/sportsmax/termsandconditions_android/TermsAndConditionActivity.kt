@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import com.applicaster.activities.base.APBaseActivity
+import com.applicaster.storage.LocalStorage
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_terms_and_condition.*
 
@@ -56,8 +57,14 @@ class TermsAndConditionActivity : APBaseActivity() {
         }
 
         btnAccept.setOnClickListener {
-            startActivity(Intent(this, DataConsumptionActivity::class.java))
-            finish()
+            if(BuildConfig.BUILD_TYPE == "release"){
+                LocalStorage.storageRepository.set(ACCEPTED_TERMS_AND_CONDITIONS_DATA_CONSENT, "1", PLUGIN_NAME)
+                StartUpAdapter.hookListener?.onHookFinished()
+                this.finish()
+            } else {
+                startActivity(Intent(this, DataConsumptionActivity::class.java))
+                finish()
+            }
         }
     }
 
@@ -67,4 +74,3 @@ class TermsAndConditionActivity : APBaseActivity() {
     }
 
 }
-
