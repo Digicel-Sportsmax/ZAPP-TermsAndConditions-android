@@ -58,14 +58,13 @@ class TermsAndConditionActivity : APBaseActivity() {
         }
 
         btnAccept.setOnClickListener {
-            val isDebuggable = 0 != applicationContext?.applicationInfo?.flags ?: 0 and ApplicationInfo.FLAG_DEBUGGABLE
-            if(!isDebuggable){
+            if(ConfigurationUiHelper.getValue(SHOW_DATA_CONSENT_WARNING) == "1"){
+                startActivity(Intent(this, DataConsumptionActivity::class.java))
+                finish()
+            } else {
                 LocalStorage.storageRepository.set(ACCEPTED_TERMS_AND_CONDITIONS_DATA_CONSENT, "1", PLUGIN_NAME)
                 StartUpAdapter.hookListener?.onHookFinished()
                 this.finish()
-            } else {
-                startActivity(Intent(this, DataConsumptionActivity::class.java))
-                finish()
             }
         }
     }

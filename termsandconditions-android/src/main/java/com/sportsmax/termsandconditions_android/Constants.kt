@@ -2,6 +2,7 @@ package com.sportsmax.termsandconditions_android
 
 
 const val SHOW_SCREEN_AT_LAUNCH : String = "show_screen_at_launch"
+const val SHOW_DATA_CONSENT_WARNING: String = "show_data_consent_warning"
 const val NAVIGATION_HEADER_IMAGE: String = "navigation_header_image"
 const val NAVIGATION_HEADER_TEXT: String = "navigation_header_text"
 const val NAVIGATION_HEADER_BACKGROUND: String = "navigation_header_background"
