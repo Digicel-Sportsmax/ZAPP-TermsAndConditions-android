@@ -51,7 +51,7 @@ jobs:
 
       - run:
           name: Deploy to Bintray
-          command: ./gradlew bintrayUpload
+          command: ./gradlew bintrayUpload --stacktrace
 
 workflows:
   version: 2
