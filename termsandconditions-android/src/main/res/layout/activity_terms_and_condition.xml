@@ -50,7 +50,7 @@
         android:layout_height="0dp"
         android:background="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintBottom_toTopOf="@+id/termsAgreeView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
         <TextView
@@ -62,13 +62,11 @@
             android:clickable="true"
             android:focusable="true"
             android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:paddingTop="2dp"
-            android:paddingBottom="2dp"/>
+            android:paddingEnd="8dp"/>
     </androidx.core.widget.NestedScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/termsAgreeView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/white"
@@ -80,10 +78,9 @@
         <CheckBox
             android:id="@+id/checkbox_agreeAndContinue"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="30dp"
             android:padding="4dp"
             android:text="I agree to terms and conditions"
-            app:layout_constraintHeight_percent="0.45"
             android:textColor="@color/black"
             android:buttonTint="@color/black"
             android:layout_margin="6dp"

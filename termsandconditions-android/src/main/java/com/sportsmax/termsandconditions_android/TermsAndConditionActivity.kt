@@ -1,7 +1,6 @@
 package com.sportsmax.termsandconditions_android
 
 import android.content.Intent
-import android.content.pm.ApplicationInfo
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.view.View

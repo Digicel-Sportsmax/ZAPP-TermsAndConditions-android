@@ -3,8 +3,14 @@
     package="com.sportsmax.termsandconditions_android">
 
     <application>
-        <activity android:name=".TermsAndConditionActivity" />
-        <activity android:name=".DataConsumptionActivity" />
+        <activity
+            android:name=".TermsAndConditionActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".DataConsumptionActivity"
+            android:screenOrientation="portrait"
+            />
     </application>
 
 </manifest>
