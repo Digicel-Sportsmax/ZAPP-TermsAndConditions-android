@@ -83,12 +83,12 @@ dependencies {
     def applicasterSDKPath = 'com.applicaster:applicaster-android-sdk:4.0.+'
 
     // Check if an open SDK is defined - if not use the closed one.
-    //def devSDK = findProject(':applicaster-android-sdk')
-    //if (devSDK != null) {
-    //    implementation project(path: ':applicaster-android-sdk')
-    //} else {
+    def devSDK = findProject(':applicaster-android-sdk')
+    if (devSDK != null) {
+        implementation project(path: ':applicaster-android-sdk')
+    } else {
         implementation(applicasterSDKPath)
-    //}
+    }
 
     // Kotlin - if used
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
